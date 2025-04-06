@@ -1,1 +1,137 @@
-# Hack-the-Future
+# AI-Powered Job Application Screening System
+
+An advanced job application screening system that uses AI to process CVs, match candidates with job descriptions, and streamline the hiring process.
+
+## Key Features
+
+- **On-Prem LLM Integration**: Uses Ollama to run Gemma3:4b locally for privacy and control
+- **Custom Multi-Agent Framework**: Coordinates specialized agents for different parts of the screening process
+- **Vector Embeddings**: Uses Ollama-based embeddings for semantic search and matching
+- **SQLite Database**: Stores job descriptions, candidate data, and matching results
+- **Optimized Performance**: Parallel processing, caching, and efficient matching algorithms
+
+## Agents
+
+The system uses a multi-agent architecture where specialized agents work together:
+
+1. **CV Processor Agent**: Extracts data from CVs including skills, experience, qualifications
+2. **JD Summarizer Agent**: Processes job descriptions to extract requirements
+3. **Efficient Matcher**: Compares jobs and candidates using embeddings and LLM analysis
+4. **Scheduler Agent**: Handles interview scheduling for shortlisted candidates
+
+## Setting Up
+
+### Prerequisites
+
+- Python 3.8+ 
+- [Ollama](https://ollama.ai/) installed on your system
+- Basic dependencies (see requirements.txt)
+
+### Installation
+
+1. Clone this repository
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+3. Install Ollama and make sure it's running (follow instructions at [ollama.ai](https://ollama.ai/))
+4. Pull necessary models (optional, will be done automatically when needed):
+   ```
+   ollama pull gemma3:4b
+   ollama pull nomic-embed-text
+   ```
+
+## Usage
+
+### Running the System
+
+The system runs the full job screening pipeline using Gemma3:4b model:
+
+#### Windows:
+```
+run_pipeline.bat
+```
+
+#### Unix/Mac:
+```
+./run_pipeline.sh
+```
+
+Alternatively, you can run with Ollama checking:
+
+#### Windows:
+```
+check_ollama_and_run.bat
+```
+
+#### Unix/Mac:
+```
+./check_ollama_and_run.sh
+```
+
+### What the Pipeline Does
+
+1. **Reset Database**: Clears previous data and prepares for a new run
+2. **Process Job Descriptions**: Extracts requirements from job postings
+3. **Process CVs**: Extracts skills and qualifications from candidate resumes
+4. **Match Candidates**: Uses AI to match candidates to jobs
+5. **Shortlist Candidates**: Selects the best candidates for each job
+6. **Schedule Interviews**: Creates interview schedules for shortlisted candidates
+
+## Architecture
+
+### BaseAgent and Multi-Agent Framework
+
+The system uses a custom multi-agent framework with a BaseAgent class that provides:
+
+- Ollama LLM integration
+- Tool registration and usage
+- Agent messaging
+- State management
+
+### Ollama Integration
+
+The system uses Ollama for:
+
+- **LLM Processing**: Using Gemma3:4b for analyzing text, summarization, and generating insights
+- **Embeddings**: For semantic search and matching
+- **Skills Extraction**: Identifying skills and requirements from text
+
+## Database Schema
+
+The system uses SQLite with the following key tables:
+
+- `job_descriptions`: Stores job postings
+- `candidates`: Stores candidate information from CVs
+- `match_results`: Stores matching scores and results
+- `shortlists`: Tracks shortlisted candidates
+- `interviews`: Manages interview schedules
+
+## Project Structure
+
+```
+├── optimized_app.py    # Main application
+├── config.py           # Configuration settings
+├── efficient_matcher.py# Optimized matching system
+├── reset_db.py         # Database reset utility
+├── run_pipeline.bat    # Windows run script
+├── run_pipeline.sh     # Unix run script
+├── check_ollama_and_run.bat  # Windows Ollama check script
+├── check_ollama_and_run.sh   # Unix Ollama check script
+├── agents/             # Agent modules
+│   ├── cv_processor.py # CV processing agent
+│   ├── jd_summarizer.py # Job description summarizer
+│   └── scheduler_agent.py # Interview scheduler
+├── database/           # Database modules
+├── Dataset/            # Dataset directory for job descriptions and CVs
+├── generated_emails/   # Generated interview emails
+├── utils/              # Utility modules
+│   ├── ollama_client.py # Ollama LLM client
+│   ├── embeddings.py   # Embedding utilities
+│   └── pdf_extractor.py # PDF data extraction
+└── requirements.txt    # Dependencies
+```
+
+## License
+
+MIT License 
