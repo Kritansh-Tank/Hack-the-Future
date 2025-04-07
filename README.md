@@ -1,4 +1,4 @@
-# AI-Powered Job Application Screening System
+# HireIQ: Multi-Agent Job Screening System with Adaptive Intelligence
 
 An advanced job application screening system that uses AI to process CVs, match candidates with job descriptions, and streamline the hiring process.
 
