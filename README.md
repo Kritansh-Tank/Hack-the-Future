@@ -1,6 +1,6 @@
 # HireIQ: Multi-Agent Job Screening System with Adaptive Intelligence
 
-HireIQ revolutionizes recruitment through an on-premise AI system that automates the entire hiring pipeline. The solution deploys specialized agents for JD analysis, CV processing, candidate matching, and interview scheduling—all powered by local LLMs for data security. HireIQ reduces screening time by 80-90% while ensuring consistent, bias-free candidate evaluation across any recruitment scale.
+HireIQ revolutionizes recruitment through an on-premise AI system that automates the entire hiring pipeline. The solution deploys specialized agents for JD analysis, CV processing, candidate matching, and interview scheduling all powered by local LLMs for data security. HireIQ reduces screening time by 80-90% while ensuring consistent, bias-free candidate evaluation across any recruitment scale.
 
 ## Key Features
 
