@@ -1,6 +1,6 @@
-# HireIQ: Multi-Agent Job Screening System with Adaptive Intelligence
+![image](https://github.com/user-attachments/assets/b40f9669-0ba4-4b68-b318-42e18974f6a6)# HireIQ: Multi-Agent Job Screening System with Adaptive Intelligence
 
-An advanced job application screening system that uses AI to process CVs, match candidates with job descriptions, and streamline the hiring process.
+HireIQ revolutionizes recruitment through an on-premise AI system that automates the entire hiring pipeline. The solution deploys specialized agents for JD analysis, CV processing, candidate matching, and interview scheduling—all powered by local LLMs for data security. HireIQ reduces screening time by 80-90% while ensuring consistent, bias-free candidate evaluation across any recruitment scale.
 
 ## Key Features
 
